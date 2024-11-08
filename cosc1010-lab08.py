@@ -14,7 +14,27 @@
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
-
+def num_convert(num):
+    isNeg = False
+    if '-' in num:
+        isNeg = True
+        num = num.replace("-","")
+    if "." in num:
+        num_list = num.split('.')
+        print(num_list)
+        if len(num_list) == 2 and num_list[0].isdigit() and num_list[1].isdigit():
+            if isNeg:
+                return -1 * float(num)
+            else:
+                return float(num)
+    elif  num.isdigit():
+        if isNeg:
+            return -1 *int(num)
+        else:
+            return int (num)
+    else:
+        return False
+        
 print("*" * 75)
 
 
@@ -38,9 +58,31 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
+
+def intercept(m, b, a, an):
+    m = num_convert(m)
+    b = num_convert(b)
+    a = num_convert(a)
+    an = num_convert(an)
+    list=[]
+    for x in range(a,an+1):
+        y=m*x+b
+        list.append(y)
+    return listWhile True:
+     m= input9"please enter a value for m or type wxit to wxit")
+     if m.lower() =="exit":
+        break
+     b= input("please enter a value for m or type wxit to wxit")
+     if b.lower() =="exit":
+        break
+    a= input("please enter a value for m or type wxit to wxit")
+     if a.lower() =="exit":
+        break
+
+an= input("please enter a value for m or type wxit to wxit")
+     if an.lower() =="exit":
+        break
 print("*" * 75)
-
-
 # Write a function to solve the quadratic formula
 # https://en.wikipedia.org/wiki/Quadratic_formula
 # Accept inputs for a, b, c
